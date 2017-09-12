@@ -7,26 +7,30 @@
 //
 //
 
-
 $(document).ready(function(){
 
-	var timer = {
+	var triviaApp = {
 
-		remaningTime : 30,
+		remainingTime : 30,
 		tick : setInterval(this.countdown, 1000),
 
+		// Load game after start button has been clicked.
+		start : function() {
+			$('#start').on('click', function() {
+				$(this).hide();
+				$('#timer').html("Time Remaining: " + this.tick + " Seconds");
+			});
+		},
+
 		countdown : function (){
-			this.remaningTime--;
-			$('#timer').html(this.remaningTime);
-			},
+			this.remainingTime--;
+			}
 		
-		}
+	};
 
+	triviaApp.start();
 
-	$('#timer').html(timer.remaningTime);
-	console.log(timer.tick);
-
-
+});
 
 
 
@@ -48,4 +52,4 @@ $(document).ready(function(){
 	// =====================================================================================
 
 
-});
+

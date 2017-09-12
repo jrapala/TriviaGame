@@ -15,18 +15,15 @@ body {
 
 body {
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 16px; 
+	font-size: 32px; 
 	line-height: 1.2em;
+	letter-spacing: .025em;
 	color: #000; 
-	letter-spacing: .015em;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Georgia', Times, "Times New Roman", serif;
 }
 
 h1 {
-	font-size: 5em;
+	font-family: 'Georgia', Times, "Times New Roman", serif;
+	font-size: 2.5em;
 	color: #eceaf2;
 	text-shadow: 1px 1px 5px #000;
 }
@@ -41,7 +38,8 @@ p {
 
    * Container: #23afa8
    * Logo font color: 
-   * Font color: #150f26;
+   * Font color: #150f26
+   * Button color: #b72470
 
 
 /* Clearing
@@ -72,20 +70,34 @@ body {
 	border: 3px solid #000;
 }
 
-.time {
+main > div {
 	text-align: center;
-	margin-top: 80px;
+	margin-top: 60px;
 }
 
-.time p {
-	display: inline-block;
+/* ===== Button ===== */
+
+.button {
+  background: #b72470;
+  background-image: linear-gradient(to bottom, #b72470, #7a1649);
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  color: #eceaf2;
+  font-size: 60px;
+  padding: 20px 50px 20px 50px;
+  text-decoration: none;
+  margin: 160px auto;
+  display: block;
 }
 
+.button:hover {
+  background: #7a1649;
+  background-image: linear-gradient(to bottom, #7a1649, #560f33);
+  text-decoration: none;
+  color: #dbd9e1;
+}
 
-/* ===== Logo ===== */
-
-
-/* ===== Footer ===== */
 
 
 
