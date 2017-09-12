@@ -1,0 +1,91 @@
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+}
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+body {
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 16px; 
+	line-height: 1.2em;
+	color: #000; 
+	letter-spacing: .015em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Georgia', Times, "Times New Roman", serif;
+}
+
+h1 {
+	font-size: 5em;
+	color: #eceaf2;
+	text-shadow: 1px 1px 5px #000;
+}
+
+p {
+	font-size: 1.8em;
+}
+
+
+/* Colors
+––––––––––––––––––––––––––––––––––––––––––––––––––
+
+   * Container: #23afa8
+   * Logo font color: 
+   * Font color: #150f26;
+
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.clearfix {
+  content: "";
+  display: block;
+  clear: both; 
+}
+
+/* Custom Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+header {
+	text-align: center;
+	padding-top: 50px;
+}
+body {
+	background: url("../images/chevrons.jpg");
+}
+
+.wrapper {
+	width: 80%;
+	background-color: #23afa8;
+	min-height: 600px;
+	margin: 80px auto;
+	border: 3px solid #000;
+}
+
+.time {
+	text-align: center;
+	margin-top: 80px;
+}
+
+.time p {
+	display: inline-block;
+}
+
+
+/* ===== Logo ===== */
+
+
+/* ===== Footer ===== */
+
+
+
