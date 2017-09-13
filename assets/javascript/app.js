@@ -18,8 +18,8 @@ $(document).ready(function(){
 		questions : [
 				{
 					question: "What was Britney Spears' first hit single?",
-					choices : ["Baby One More Time", "Sometimes", "You Drive Me Crazy", "Toxic"],
-					answer : 0
+					choices : ["Sometimes", "Baby One More Time", "You Drive Me Crazy", "Toxic"],
+					answer : 1
 				},
 				{
 					question: "Which basketball player was in Space Jam?",
@@ -28,8 +28,8 @@ $(document).ready(function(){
 				},
 				{
 					question: "Mr. Feeny was the teacher in which popular TV show?",
-					choices : ["Boy Meets World", "Fresh Prince of Bel-Air", "Saved by the Bell", "Beverly Hills 90210"],
-					answer : 0
+					choices : ["Fresh Prince of Bel-Air", "Saved by the Bell", "Beverly Hills 90210", "Boy Meets World"],
+					answer : 3
 				},
 				{
 					question: "What was Tommy's last name in Rugrats?",
@@ -38,23 +38,23 @@ $(document).ready(function(){
 				},
 				{
 					question: "Who wrote the book series 'Goosebumps'?",
-					choices : ["R.L. Stine", "Lois Lowry", "Stephen King", "Dav Pilkey"],
-					answer : 0
+					choices : ["Lois Lowry", "Stephen King", "R.L. Stine", "Dav Pilkey"],
+					answer : 2
 				},
 				{
 					question: "What was the original flavor of Dunkaroos?",
-					choices : ["Cinnamon", "Chocolate", "Vanilla", "Peanut Butter"],
-					answer : 0
+					choices : ["Chocolate", "Vanilla", "Cinnamon", "Peanut Butter"],
+					answer : 2
 				},
 				{
 					question: "*NSYNC consisted of Justin Timberlake, Lance Bass, JC Chasez, Joey Fatone, and ______?",
-					choices : ["Chris Kirkpatrick", "Brian Litrell", "Joey McIntyre", "Jeff Timmons"],
-					answer : 0
+					choices : ["Brian Litrell", "Chris Kirkpatrick", "Joey McIntyre", "Jeff Timmons"],
+					answer : 1
 				},
 				{
 					question: "What was the boy's name in Pokemon?",
-					choices : ["Ash", "Poli", "Kai", "Onix"],
-					answer : 0
+					choices : ["Poli", "Kai", "Onix", "Ash"],
+					answer : 3
 				}
 		],
 
