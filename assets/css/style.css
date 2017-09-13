@@ -70,7 +70,16 @@ body {
 	border: 3px solid #000;
 }
 
-main > div {
+main > div > div {
+	text-align: center;
+	margin-top: 60px;
+}
+
+main > div > div:last-child {
+	margin-bottom: 60px;
+}
+
+#timer {
 	text-align: center;
 	margin-top: 60px;
 }
@@ -98,6 +107,15 @@ main > div {
   color: #dbd9e1;
 }
 
+/* ===== Questions ===== */
+
+.answer {
+	display: block;
+}
+
+label {
+	color: black;
+}
 
 
 

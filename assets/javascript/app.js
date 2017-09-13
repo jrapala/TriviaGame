@@ -11,6 +11,9 @@ $(document).ready(function(){
 
 	var triviaApp = {
 
+		// Variables 
+		// =====================================================================================
+
 		remainingTime : 30,
 		questions : [
 				{
@@ -54,23 +57,75 @@ $(document).ready(function(){
 					answer : 0
 				}
 		],
-		tick : setInterval(this.countdown, 1000),
+
+		// Functions
+		// =====================================================================================
 
 		// Load game after start button has been clicked.
 		start : function() {
+			var self = this;
 			$('#start').on('click', function() {
 				$(this).hide();
-				$('#timer').html("Time Remaining: " + this.tick + " Seconds");
+				self.tick();
+				//$('#timer').html("Time Remaining: " + self.tick + " Seconds");
+				self.loadQuestions();
 			});
 		},
 
-		countdown : function (){
-			this.remainingTime--;
-			}
+		tick : function() {
+			setInterval(this.countdown(), 1000)
+		},
 		
+		countdown : function() {
+			var currentSecond = this.remainingTime - 1;
+			$('#timer').html("Time Remaining: " + currentSecond + " Seconds");
+		},
+
+		// Populate questions
+		loadQuestions : function() {
+			for (var i = 0; i < this.questions.length; i++) {
+				// Create question div
+      			var $questionDiv = $('<div>');
+      			// Apply question class
+      			$questionDiv.addClass("question");
+      			// Insert question from questions object
+      			$questionDiv.text(this.questions[i].question);
+      			// Add div to #questions div
+      			$('#questions').append($questionDiv);
+      			// Create answers div
+      			var $answersDiv = $('<form>');
+      			// Add answers class
+      			$answersDiv.addClass("answers");
+      			$questionDiv.append($answersDiv);
+      			// Loop through answers
+      			//var self = this;
+      			for (var j = 0; j < this.questions[i].choices.length; j++) {
+      				// Create answer div
+      				var $answer = $("<input>");
+      				var $label = $("<label>");
+      				// Apply answer class
+      				$answer.addClass("answer");
+      				// Apply attribute
+      				$answer.attr("type", "radio");
+      				$answer.attr("name", "question" + i);
+      				// Insert answer from questions object
+      				$label.text(this.questions[i].choices[j]);
+      				// Add div to question
+      				$answer.append($label);
+      				$answersDiv.append($answer);
+      			};
+
+
+      		}
+      	},	
+
 	};
 
+	// Gameplay
+	// =====================================================================================
+
 	triviaApp.start();
+	
 
 });
 
@@ -82,16 +137,7 @@ $(document).ready(function(){
 
 
 
-	// Variables 
-	// =====================================================================================
 
-
-	// Functions
-	// =====================================================================================	
-
-
-	// Gameplay
-	// =====================================================================================
 
 
 
