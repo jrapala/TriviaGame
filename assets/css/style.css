@@ -107,24 +107,29 @@ main > div > div:last-child {
   color: #dbd9e1;
 }
 
-/* ===== Questions ===== */
+/* ===== Questions ===== 
 
-.answers {
+.answers > form > div {
 	text-align: center;
 	display: inline-block;
 	margin-top: 10px;
 	clear: both;
 }
-.answer {
-	float: left;
-}
 
-label {
 	text-align: right;
 	float: left;
 	margin: 0 10px;
 	padding-top: 0;
+.answer {
+	float: left;
+}
+*/
+.answers {
+	margin-left: 50px;
+}
+label {
 	font-size: .5em;
+	margin: 0px 6px;
 }
 
 .question {
@@ -132,5 +137,7 @@ label {
 	font-size: .9em;
 }
 
-
+input[type=radio]:not(:first-child) {
+	margin-left: 20px;
+}
 

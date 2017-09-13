@@ -90,32 +90,55 @@ $(document).ready(function(){
       			$questionDiv.addClass("question");
       			// Insert question from questions object
       			$questionDiv.text(this.questions[i].question);
-      			// Add div to #questions div
-      			$('#questions').append($questionDiv);
       			// Create answers div
-      			var $answersDiv = $('<form>');
-      			// Add answers class
+      			var $answersDiv = $('<div>');
+      			// Add answers class.
       			$answersDiv.addClass("answers");
-      			$questionDiv.append($answersDiv);
+      			// Create answers form
+      			var $answersForm = $('<form>');
+      			// Create answers form div
+      			var $answersFormDiv = $('<div>');
+
+
       			// Loop through answers
       			//var self = this;
       			for (var j = 0; j < this.questions[i].choices.length; j++) {
-      				// Create answer div
+      				// Create answer input & label
       				var $answer = $("<input>");
       				var $label = $("<label>");
-      				// Apply answer class
-      				$answer.addClass("answer");
       				// Apply attribute
       				$answer.attr("type", "radio");
       				$answer.attr("name", "question" + i);
       				// Insert answer from questions object
       				$label.text(this.questions[i].choices[j]);
-      				// Add div to question
-      				$answersDiv.append($answer);
-      				$answersDiv.append($label);
+      				// Add to div
+      				$answersFormDiv.append($answer);
+      				$answersFormDiv.append($label);
       			};
 
+      			// Append answers form
+      			$answersForm.append($answersFormDiv);
 
+      			// Append answers class
+      			$answersDiv.append($answersForm);
+
+				// Add div to #questions div
+      			$('#questions').append($questionDiv);
+
+      			// Append answers class
+      			$('#questions').append($answersDiv);
+
+      			// <div class="question">
+      			// <div class="answers">
+      			//		<form>
+      			//			<div>
+      			//				<input type="radio">
+      			//				<label>Male
+      			//				<input type="radio">
+      			//				<label>Female
+      			//			</div>
+      			//		</form>
+      			// </div>
       		}
       	},	
 
