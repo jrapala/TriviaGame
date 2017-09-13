@@ -111,8 +111,8 @@ $(document).ready(function(){
       				// Insert answer from questions object
       				$label.text(this.questions[i].choices[j]);
       				// Add div to question
-      				$answer.append($label);
       				$answersDiv.append($answer);
+      				$answersDiv.append($label);
       			};
 
 
