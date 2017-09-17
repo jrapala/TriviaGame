@@ -16,9 +16,6 @@ $(document).ready(function(){
 		// Variables 
 		// =====================================================================================
 
-
-		totalTime : 30,
-    seconds : this.totalTime,
 		questions : [
       {
        question: "What was Britney Spears' first hit single?",
@@ -76,29 +73,33 @@ $(document).ready(function(){
        $('#start').on('click', function() {
         // Hide start button
         $(this).hide();
-        // Start timer
-        self.tick();
 				//$('#timer').html("Time Remaining: " + self.tick + " Seconds");
 				self.createAnswerArray();
 				self.loadQuestions();
+        // Start timer
+        self.countdown();
         $("#done").show();
 			});
 			// Marking end game instead of timer
 			$("#done").on('click', function() {
-				self.loopThroughQuestions();
-        self.results();
+        self.gameEnd();
       });
 		},
 
-		tick : function() {
-			this.seconds = setInterval(this.countdown(), 1000)
-		},
-
     countdown : function () {
-      this.seconds--;
-      $("#timer").html("Time Remaining: " + this.seconds + " Seconds");
+      var seconds = 5;
+      var self = this;
+      function tick() {
+        $('#timer').text("Time Remaining: " + seconds + " Seconds");
+        if (seconds > 0) {
+          setTimeout(tick,1000);
+        } else {
+          self.gameEnd();
+        }
+        seconds--;
+      }
+      tick();
     },
-		
 
     createAnswerArray : function() {
      for (var k = 0; k < this.questions.length; k++) {      
@@ -156,6 +157,10 @@ $(document).ready(function(){
       }
     },	
 
+    gameEnd : function() {
+      this.loopThroughQuestions();
+      this.results();
+    },
 
     loopThroughQuestions : function() {
       for (var n =0; n < this.answerArray.length; n++) {
