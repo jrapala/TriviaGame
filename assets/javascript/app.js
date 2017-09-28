@@ -1,13 +1,6 @@
 // JavaScript: Trivia Game | By Juliette Rapala
 // =====================================================================================
-//
-// To Do:
-//
-// All Done!
-// Correct Answers: 4
-// Incorrect Answers: 
-// Unanswered: 0
-//
+
 
 $(document).ready(function(){
 
@@ -73,21 +66,24 @@ $(document).ready(function(){
        $('#start').on('click', function() {
         // Hide start button
         $(this).hide();
-				//$('#timer').html("Time Remaining: " + self.tick + " Seconds");
+				// Create correct answer array from questions object
 				self.createAnswerArray();
+        // Populate questions onto the screen
 				self.loadQuestions();
-        // Start timer
+        // Starts timer
         self.countdown();
+        // Show the "Done" button
         $("#done").show();
 			});
-			// Marking end game instead of timer
+			// Game ends when "Done" button is pressed (if timer has not run out)
 			$("#done").on('click', function() {
         self.gameEnd();
       });
 		},
 
+    // Add 30 seconds to the timer, display timer, and run timer until time runs out
     countdown : function () {
-      var seconds = 5;
+      var seconds = 30;
       var self = this;
       function tick() {
         $('#timer').text("Time Remaining: " + seconds + " Seconds");
@@ -101,11 +97,11 @@ $(document).ready(function(){
       tick();
     },
 
+    // Create correct answer array from questions object
     createAnswerArray : function() {
      for (var k = 0; k < this.questions.length; k++) {      
       this.answerArray.push(this.questions[k].answer);
     };
-    console.log(this.answerArray);
   },
 
 		// Populate questions
@@ -157,59 +153,77 @@ $(document).ready(function(){
       }
     },	
 
+    // Grade game and report results
     gameEnd : function() {
+      // Check answers of every question
       this.loopThroughQuestions();
+      // Report results
       this.results();
     },
 
+    // Check answers of every question
     loopThroughQuestions : function() {
       for (var n =0; n < this.answerArray.length; n++) {
         this.checkAnswer(n);
       }
     },
 
-    checkAnswer : function(radioValue) {     
+    // Check answer of current question
+    checkAnswer : function(radioValue) {
+      // Select every answer for the question     
       var $radios = $('input[name="question' + radioValue + '"]');
       var blank = 0;
       var answer;
+
+      // Loop through every answer of current question
       $radios.each(function() {
+        // If answer is selected, take the value of the answer
         if ($(this).is(':checked')) {
           answer = $(this).attr("value");
-          console.log("Radio was checked " + answer);
         } else {
+        // If answer was not selected, increase the blank counter
           blank++
-          console.log("Radio was not checked.");
         }
       });
+      // If there are four blanks, then no questions were answered
       if (blank === 4) {
+        // Increase unanswered counter
         this.unanswered++;
-        console.log("Question " + radioValue + " was not answered.")
+        console.log("Question " + (radioValue+1) + " was not answered.")
+      // If answer matches correct answer
       } else if (answer === this.answerArray[radioValue]) {
+        // Increase correct answer counter
         this.correctAnswers++;
-        console.log("Question " + radioValue + " was answered correctly!")
+        console.log("Question " + (radioValue+1) + " was answered correctly!")
+      // If answer is not the correct answer
       } else {
+        // Increase incorrect answer counter
         this.incorrectAnswers++;
-        console.log("Question " + radioValue + " was answered incorrectly.")
+        console.log("Question " + (radioValue+1) + " was answered incorrectly.")
       }     
     },
 
+    // Display results after game end
     results : function() {
+      // Remove all questions from the screen
       $('#main').empty();
+      // Create message div
       var $messageDiv = $('<div>');
+      // Add message class
       $messageDiv.addClass("message");
+      // Add text
       $messageDiv.html("All Done!");
+      // Create results div
       var $resultsDiv = $('<div>');
+      // Add results class
       $resultsDiv.addClass("results");
-      		//this.unanswered = this.questions.length - this.correctAnswers - this.incorrectAnswers;   
-      		$resultsDiv.html("Correct Answers: " + this.correctAnswers + "<br>Incorrect Answers: " + this.incorrectAnswers + "<br>Unanswered: " + this.unanswered);
-      		$('#main').append($messageDiv);
-      		$('#main').append($resultsDiv);
-
-      	},
-
-
-
-      }
+      // Add text
+      $resultsDiv.html("Correct Answers: " + this.correctAnswers + "<br>Incorrect Answers: " + this.incorrectAnswers + "<br>Unanswered: " + this.unanswered);
+      // Add message and results divs to the screen
+      $('#main').append($messageDiv);
+      $('#main').append($resultsDiv);
+    },
+  }
 
 	// Gameplay
 	// =====================================================================================
@@ -217,13 +231,5 @@ $(document).ready(function(){
 	triviaApp.play();
 
 });
-
-
-// All Done!
-// Correct Answers: 4
-// Incorrect Answers: 
-// Unanswered: 0
-
-
 
 

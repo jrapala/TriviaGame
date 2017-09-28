@@ -33,6 +33,7 @@ p {
 }
 
 
+
 /* Colors
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -58,6 +59,7 @@ header {
 	text-align: center;
 	padding-top: 50px;
 }
+
 body {
 	background: url("../images/chevrons.jpg");
 }
@@ -78,6 +80,8 @@ main > div > div {
 main > div > div:last-child {
 	margin-bottom: 60px;
 }
+
+/* ===== Timer ===== */
 
 #timer {
 	text-align: center;
@@ -107,40 +111,30 @@ main > div > div:last-child {
   color: #dbd9e1;
 }
 
-/* ===== Questions ===== 
-
-.answers > form > div {
-	text-align: center;
-	display: inline-block;
-	margin-top: 10px;
-	clear: both;
-}
-
-	text-align: right;
-	float: left;
-	margin: 0 10px;
-	padding-top: 0;
-.answer {
-	float: left;
-}
-*/
-.answers {
-	margin-left: 50px;
-	margin-top: 10px;
-}
-label {
-	font-size: .5em;
-	margin: 0px 6px;
-}
+/* ===== Questions ===== */
 
 .question {
 	clear: both;
 	font-size: .9em;
 }
 
+/* ===== Answers ===== */
+
+.answers {
+	margin-left: 50px;
+	margin-top: 10px;
+}
+
+label {
+	font-size: .5em;
+	margin: 0px 6px;
+}
+
 input[type=radio]:not(:first-child) {
 	margin-left: 20px;
 }
+
+/* ===== Final Screen ===== */
 
 .message {
 	text-align: center;
